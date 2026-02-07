@@ -2,14 +2,14 @@
 @import "tailwindcss";
 
 :root {
-	--paper: #f7f1e8;
-	--paper-strong: #efe7dc;
-	--ink: #2b261f;
-	--muted: #7a6f63;
-	--accent: #e07a5f;
-	--accent-2: #5b9a86;
-	--highlight: #fff0b0;
-	--shadow: 0 12px 28px rgba(43, 38, 31, 0.12), 0 2px 8px rgba(43, 38, 31, 0.1);
+	--paper: #C4BBAC;
+	--paper-strong: #e3e6e9;
+	--ink: #16181a;
+	--muted: rgba(22, 24, 26, 0.58);
+	--accent: #e06a3b;
+	--accent-2: #9aa0a3;
+	--highlight: #e9edf2;
+	--shadow: none;
 }
 
 @layer base {
@@ -23,8 +23,9 @@
 
 	body {
 		font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-		background: radial-gradient(1200px 600px at 10% -10%, #fff6e2 0%, transparent 60%),
-			radial-gradient(900px 500px at 100% -20%, #f2e6d7 0%, transparent 60%), var(--paper);
+		background-color: var(--paper);
+		background-image: repeating-linear-gradient(90deg, rgba(22, 24, 26, 0.04) 0, rgba(22, 24, 26, 0.04) 1px, transparent 1px, transparent 20px),
+			repeating-linear-gradient(0deg, rgba(22, 24, 26, 0.04) 0, rgba(22, 24, 26, 0.04) 1px, transparent 1px, transparent 20px);
 		color: var(--ink);
 		font-size: 19px;
 		line-height: 1.75;
@@ -70,7 +71,7 @@
 		padding: 1.6em;
 		border-radius: 16px;
 		overflow-x: auto;
-		box-shadow: var(--shadow);
+		box-shadow: none;
 	}
 
 	pre code {
@@ -89,7 +90,7 @@
 
 	hr {
 		border: none;
-		border-top: 1px solid rgba(43, 38, 31, 0.12);
+		border-top: 1px solid rgba(23, 23, 23, 0.12);
 		margin: 2.5rem 0;
 	}
 
@@ -154,7 +155,7 @@
 
 	.text-link {
 		text-decoration: underline;
-		text-decoration-color: rgba(43, 38, 31, 0.25);
+		text-decoration-color: rgba(23, 23, 23, 0.25);
 		text-underline-offset: 0.28em;
 		transition: color 200ms ease, text-decoration-color 200ms ease;
 	}
@@ -163,6 +164,7 @@
 		color: var(--accent);
 		text-decoration-color: currentColor;
 	}
+
 }
 
 .sr-only {

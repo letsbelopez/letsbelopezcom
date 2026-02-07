@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import AvatarImage from '../assets/avatar.jpeg';
 ---
 
 <!doctype html>
@@ -16,21 +17,21 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		<main class="mx-auto w-full max-w-5xl px-4 pb-20 pt-12">
 			<section class="mx-auto max-w-2xl space-y-6">
 				<div class="flex flex-wrap items-center gap-4">
-					<span class="inline-flex h-16 w-16 overflow-hidden rounded-full bg-[color:var(--paper-strong)] shadow-[0_0_0_6px_rgba(43,38,31,0.06)]">
-						<img src="/portrait.jpg" alt="Portrait of Leslie Lopez" class="h-full w-full object-cover" />
+					<span class="inline-flex h-16 w-16 overflow-hidden rounded-full bg-[color:var(--paper-strong)] shadow-[0_0_0_6px_rgba(23,23,23,0.06)]">
+						<img src={AvatarImage.src} alt="Portrait of Leslie Lopez" class="h-full w-full object-cover" />
 					</span>
-					<h1 class="text-4xl font-semibold leading-tight md:text-5xl">Hi, I’m @letsbelopez.</h1>
+					<h1 class="text-4xl font-medium leading-tight md:text-5xl">Hi, I’m @letsbelopez.</h1>
 				</div>
 				<p class="max-w-xl text-lg text-[color:var(--muted)]">
 					I build thoughtful digital products, document the process, and share the stories, lessons, and
 					experiments that happen along the way.
 				</p>
 				<div class="flex flex-wrap items-center gap-6 text-sm">
-					<a class="text-link font-mono text-xs uppercase tracking-[0.2em]" href="/about">
+					<a class="text-link text-xs font-semibold uppercase tracking-[0.32em]" href="/about">
 						Read more
 					</a>
 				</div>
-				<SocialLinks />
+				<SocialLinks linkClass="text-[color:var(--muted)] transition hover:text-[color:var(--accent)]" />
 			</section>
 		</main>
 		<Footer />
