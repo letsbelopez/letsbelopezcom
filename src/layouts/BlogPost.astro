@@ -7,7 +7,7 @@ import Header from '../components/Header.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate } = Astro.props;
+const { title, description, pubDate, updatedDate, shelf, format, status } = Astro.props;
 ---
 
 <html lang="en">
@@ -17,32 +17,31 @@ const { title, description, pubDate, updatedDate } = Astro.props;
 
 	<body>
 		<Header />
-		<main class="mx-auto w-full max-w-5xl px-4 pb-20 pt-12">
-			<article class="grid gap-10 lg:grid-cols-[1fr_220px] lg:items-start">
-				<div class="space-y-10">
-					<div class="space-y-6">
-						<div class="space-y-3">
-							<div class="flex flex-wrap items-center gap-3 text-sm text-[color:var(--muted)]">
-								<FormattedDate date={pubDate} />
-								{updatedDate && <span>Updated <FormattedDate date={updatedDate} /></span>}
-							</div>
-							<h1 class="text-4xl font-semibold leading-tight md:text-5xl">{title}</h1>
-							<p class="text-lg text-[color:var(--muted)]">{description}</p>
+		<main class="mx-auto w-full max-w-5xl px-4 pb-20 pt-12 md:pt-16">
+			<article class="mx-auto max-w-3xl">
+				<div class="space-y-8">
+					<header class="space-y-6">
+						<div class="space-y-4">
+							{(shelf || format || status) && (
+								<div class="flex flex-wrap items-center gap-2 font-mono text-xs uppercase text-[color:var(--accent)]">
+									{shelf && <span>{shelf}</span>}
+									{format && <span>{format}</span>}
+									{status && <span>{status}</span>}
+								</div>
+							)}
+							<h1 class="text-4xl font-medium leading-tight md:text-6xl">{title}</h1>
+							<p class="max-w-2xl text-lg text-[color:var(--muted)] md:text-xl">{description}</p>
 						</div>
-						<hr />
-						<div class="article-content space-y-6">
-							<slot />
+						<div class="flex flex-wrap items-center gap-3 font-mono text-xs uppercase text-[color:var(--muted)]">
+							<FormattedDate date={pubDate} />
+							{updatedDate && <span>Updated <FormattedDate date={updatedDate} /></span>}
 						</div>
+					</header>
+					<hr />
+					<div class="article-content">
+						<slot />
 					</div>
 				</div>
-				<aside class="sticky top-28 hidden border-l border-[rgba(43,38,31,0.12)] pl-5 text-sm text-[color:var(--muted)] lg:block">
-					<p class="font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--ink)]">On this page</p>
-					<ul class="mt-4 space-y-3">
-						<li class="fun-underline">Long-form essays</li>
-						<li class="fun-underline">Experiments and demos</li>
-						<li class="fun-underline">Notes from the day</li>
-					</ul>
-				</aside>
 			</article>
 		</main>
 		<Footer />

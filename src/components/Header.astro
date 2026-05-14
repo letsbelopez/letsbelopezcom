@@ -3,22 +3,22 @@ import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 ---
 
-<header class="sticky top-0 z-50 border-b border-[rgba(23,23,23,0.08)] bg-[color:var(--paper)]/85 backdrop-blur">
+<header class="sticky top-0 z-50 border-b border-[color:var(--rule)] bg-[color:var(--paper)]/85 backdrop-blur">
 	<div class="mx-auto w-full max-w-5xl px-4 py-4">
 		<nav class="flex items-center justify-between">
-			<a href="/" class="flex items-center gap-3 font-mono text-sm font-semibold uppercase tracking-[0.3em] text-[color:var(--ink)]">
+			<a href="/" class="flex items-center gap-3 font-sans text-sm text-[color:var(--ink)]">
 				{SITE_TITLE}
 			</a>
 			<div class="hidden items-center gap-2 md:flex">
-				<HeaderLink href="/blog">Posts</HeaderLink>
+				<HeaderLink href="/blog">Notes</HeaderLink>
 				<HeaderLink href="/about">About</HeaderLink>
 			</div>
 			<details class="relative md:hidden">
-				<summary class="cursor-pointer select-none font-mono text-xs uppercase tracking-[0.3em] text-[color:var(--muted)] transition hover:text-[color:var(--accent)]">
+				<summary class="cursor-pointer select-none font-sans text-sm text-[color:var(--muted)] transition hover:text-[color:var(--accent)]">
 					Menu
 				</summary>
-				<div class="absolute right-0 mt-3 w-44 rounded-2xl border border-[rgba(43,38,31,0.12)] bg-[color:var(--paper)] p-2 shadow-[0_12px_30px_rgba(43,38,31,0.14)]">
-					<HeaderLink href="/blog" class="block rounded-lg px-3 py-2">Posts</HeaderLink>
+				<div class="absolute right-0 mt-3 w-44 rounded-2xl border border-[color:var(--rule)] bg-[color:var(--paper)] p-2 shadow-[0_12px_30px_rgb(var(--ink-rgb)/0.14)]">
+					<HeaderLink href="/blog" class="block rounded-lg px-3 py-2">Notes</HeaderLink>
 					<HeaderLink href="/about" class="block rounded-lg px-3 py-2">About</HeaderLink>
 				</div>
 			</details>

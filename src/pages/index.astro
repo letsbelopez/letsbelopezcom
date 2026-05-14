@@ -5,6 +5,27 @@ import Header from '../components/Header.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import AvatarImage from '../assets/avatar.jpeg';
+
+const shelves = [
+	{
+		name: 'Build',
+		kicker: 'Systems that have to work after someone ships them.',
+		description:
+			'Order orchestration, high-cardinality caches, robotics localization, and the operational habits that help teams respond to 2am alarms without falling apart.',
+	},
+	{
+		name: 'Think',
+		kicker: 'Ideas I keep trying to explain.',
+		description:
+			'Books I return to, conversations I cannot stop thinking about, AI and career forks, business ideas, and notes on making things easier, clearer, or more fun.',
+	},
+	{
+		name: 'Kin',
+		kicker: 'The people and routines I am trying not to miss.',
+		description:
+			'Beach trips, bike rides, grandma’s water slide, family movie nights, garage workouts, and the work of keeping home life light and fun.',
+	},
+];
 ---
 
 <!doctype html>
@@ -14,24 +35,87 @@ import AvatarImage from '../assets/avatar.jpeg';
 	</head>
 	<body>
 		<Header />
-		<main class="mx-auto w-full max-w-5xl px-4 pb-20 pt-12">
-			<section class="mx-auto max-w-2xl space-y-6">
-				<div class="flex flex-wrap items-center gap-4">
-					<span class="inline-flex h-16 w-16 overflow-hidden rounded-full bg-[color:var(--paper-strong)] shadow-[0_0_0_6px_rgba(23,23,23,0.06)]">
-						<img src={AvatarImage.src} alt="Portrait of Leslie Lopez" class="h-full w-full object-cover" />
+		<main class="mx-auto w-full max-w-5xl px-4 pb-20 pt-12 md:pt-16">
+			<section class="grid gap-10 pb-6 md:pb-10 md:grid-cols-[1fr_180px] md:items-start">
+				<div class="max-w-3xl space-y-6">
+					<h1 class="text-4xl font-medium leading-tight md:text-6xl">
+						A homebase for things I build and thoughts I keep returning to.
+					</h1>
+					<p class="max-w-2xl text-lg text-[color:var(--muted)] md:text-xl">
+						I’m David Lopez, a software engineer working on reliability, operations, and software that has to
+						survive real use. This is where I keep production lessons, small digital explanations, reading
+						notes, family experiments, and work I want to be accountable to.
+					</p>
+				</div>
+
+				<aside class="space-y-4">
+					<span class="inline-flex h-20 w-20 overflow-hidden rounded-full bg-[color:var(--paper-strong)]">
+						<img src={AvatarImage.src} alt="Portrait of David Lopez" class="h-full w-full object-cover" />
 					</span>
-					<h1 class="text-4xl font-medium leading-tight md:text-5xl">Hi, I’m @letsbelopez.</h1>
+					<div class="space-y-2 text-sm text-[color:var(--muted)]">
+						<p class="m-0">
+							<span class="font-mono text-xs uppercase text-[color:var(--ink)]">Now:</span>
+							reliable systems, books I keep reopening, family logistics, garage workouts, and small useful experiments.
+						</p>
+						<SocialLinks linkClass="text-[color:var(--muted)] transition hover:text-[color:var(--accent)]" />
+					</div>
+				</aside>
+			</section>
+
+			<section id="shelves" aria-label="Content shelves" class="py-8 md:py-10">
+				<div class="shelf-grid">
+					{
+						shelves.map((shelf) => (
+							<article class="shelf-item">
+								<p class="font-mono text-xs uppercase text-[color:var(--accent)]">
+									{shelf.kicker}
+								</p>
+								<h3 class="text-3xl font-medium leading-tight">{shelf.name}</h3>
+								<p class="text-base text-[color:var(--muted)]">{shelf.description}</p>
+							</article>
+						))
+					}
 				</div>
-				<p class="max-w-xl text-lg text-[color:var(--muted)]">
-					I build thoughtful digital products, document the process, and share the stories, lessons, and
-					experiments that happen along the way.
-				</p>
-				<div class="flex flex-wrap items-center gap-6 text-sm">
-					<a class="text-link text-xs font-semibold uppercase tracking-[0.32em]" href="/about">
-						Read more
-					</a>
+			</section>
+
+			<section class="grid gap-8 pb-12 pt-10 md:grid-cols-[1fr_2fr]">
+				<div class="space-y-2">
+					<p class="font-mono text-xs uppercase text-[color:var(--muted)]">
+						Go next
+					</p>
+					<h2 class="text-3xl font-medium leading-tight">Choose the useful door.</h2>
 				</div>
-				<SocialLinks linkClass="text-[color:var(--muted)] transition hover:text-[color:var(--accent)]" />
+
+				<div class="grid gap-6 sm:grid-cols-2">
+					<div id="work" class="space-y-2 pt-4">
+						<h3 class="font-sans text-xl font-medium">Work</h3>
+						<p class="text-sm text-[color:var(--muted)]">
+							For reliability, operations, system design, and teams that need calm when something breaks.
+						</p>
+						<a class="text-link font-mono text-xs" href="/about">About my work</a>
+					</div>
+					<div id="projects" class="space-y-2 pt-4">
+						<h3 class="font-sans text-xl font-medium">Projects</h3>
+						<p class="text-sm text-[color:var(--muted)]">
+							Small tools, AI-assisted builds, and explanations that work better as software than as notes.
+						</p>
+						<a class="text-link font-mono text-xs" href="/blog/explaining-daylight-before-reading/">First placeholder</a>
+					</div>
+					<div id="archive" class="space-y-2 pt-4">
+						<h3 class="font-sans text-xl font-medium">Writing</h3>
+						<p class="text-sm text-[color:var(--muted)]">
+							Essays, reading notes, and working thoughts once there is something worth sharing.
+						</p>
+						<a class="text-link font-mono text-xs" href="/blog">Read posts</a>
+					</div>
+					<div id="contact" class="space-y-3 pt-4">
+						<h3 class="font-sans text-xl font-medium">Contact</h3>
+						<p class="text-sm text-[color:var(--muted)]">
+							For thoughtful introductions, project conversations, reliability questions, or one real thing.
+						</p>
+						<SocialLinks linkClass="text-[color:var(--muted)] transition hover:text-[color:var(--accent)]" />
+					</div>
+				</div>
 			</section>
 		</main>
 		<Footer />
