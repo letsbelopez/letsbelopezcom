@@ -1,62 +1,38 @@
-# Astro Starter Kit: Blog
+# letsbelopez.com
+
+Personal Astro site for `letsbelopez.com`.
+
+## Local Development
 
 ```sh
-npm create astro@latest -- --template blog
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The local dev server defaults to `http://localhost:4321`.
 
-Features:
+## Production Build
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+```sh
+npm run build
+npm run preview
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Astro writes the production site to `dist/`.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Deployment
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+This site is intended to deploy through Cloudflare Pages using the GitHub repository integration.
 
-Any static assets, like images, can be placed in the `public/` directory.
+Cloudflare Pages settings:
 
-## 🧞 Commands
+| Setting | Value |
+| --- | --- |
+| Production branch | `master` |
+| Build command | `npm run build` |
+| Build output directory | `dist` |
+| Custom domain | `letsbelopez.com` |
 
-All commands are run from the root of the project, from a terminal:
+After the Cloudflare Pages project is connected to this GitHub repo, pushes to `master` will automatically build and deploy the production site. Pull requests and non-production branches can use Cloudflare preview deployments before merging.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+The GitHub Actions workflow in `.github/workflows/build.yml` runs `npm ci` and `npm run build` on pull requests and pushes to `master`, so broken builds are caught in GitHub before or alongside Cloudflare deployments.

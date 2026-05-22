@@ -1,0 +1,43 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import DaylightToy from '../components/DaylightToy.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+const title = 'Daylight Toy';
+const description = 'A small interactive globe for seeing how Earth turns into daylight and night.';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<DaylightToy />
+
+			<section class="mx-auto grid w-full max-w-5xl gap-8 px-4 py-14 md:grid-cols-[1fr_2fr] md:py-20">
+				<div class="space-y-2">
+					<p class="font-mono text-xs uppercase text-[color:var(--accent)]">Version 1</p>
+					<h2 class="text-3xl font-medium leading-tight">One idea, one motion.</h2>
+				</div>
+
+				<div class="max-w-2xl space-y-5 text-base leading-8 text-[color:var(--muted)]">
+					<p>
+						This first version keeps the sun still and lets Earth turn. The red home marker moves into
+						light, shadow, sunrise, and sunset as the globe spins.
+					</p>
+					<p>
+						The idea started in
+						<a class="text-link" href="/blog/explaining-daylight-before-reading/">
+							Explaining Daylight Before Reading
+						</a>.
+					</p>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
