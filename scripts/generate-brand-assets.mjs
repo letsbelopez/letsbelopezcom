@@ -14,52 +14,47 @@ const colors = {
 const ogSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
 	<rect width="1200" height="630" fill="${colors.paper}" />
-	<path d="M0 0h1200v630H0z" fill="none" stroke="${colors.rule}" stroke-width="2"/>
-	<path d="M80 72h1040M80 558h1040" stroke="${colors.rule}" stroke-width="2"/>
-	<path d="M96 92v76M96 462v76M1104 92v76M1104 462v76" stroke="${colors.rule}" stroke-width="2"/>
-	<path d="M84 316h1032" stroke="${colors.rule}" stroke-width="1" stroke-dasharray="2 10"/>
-	<path d="M154 132v366" stroke="${colors.accent}" stroke-width="8"/>
-	<circle cx="154" cy="132" r="18" fill="${colors.accent}" />
-	<circle cx="154" cy="498" r="18" fill="${colors.accentSoft}" stroke="${colors.accent}" stroke-width="3" />
+	<path d="M112 80h976M112 550h976" stroke="${colors.rule}" stroke-width="2"/>
+	<path d="M132 103v72M132 455v72M1068 103v72M1068 455v72" stroke="${colors.rule}" stroke-width="2"/>
+	<path d="M600 142v346" stroke="${colors.rule}" stroke-width="2" stroke-dasharray="2 12"/>
 
-	<g transform="translate(205 126)">
-		<text x="0" y="0" fill="${colors.accent}" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="22" font-weight="600" letter-spacing="0">
-			letsbelopez
-		</text>
-		<text x="0" y="124" fill="${colors.ink}" font-family="Georgia, Newsreader, serif" font-size="108" font-weight="500" letter-spacing="0">
-			David Lopez
-		</text>
-		<text x="4" y="198" fill="${colors.muted}" font-family="Instrument Sans, Arial, sans-serif" font-size="32" letter-spacing="0">
-			<tspan x="4" dy="0">Reliable systems, useful explanations,</tspan>
-			<tspan x="4" dy="46">family experiments, and work</tspan>
-			<tspan x="4" dy="46">to live up to.</tspan>
-		</text>
+	<g transform="translate(255 162)">
+		<path d="M0 52h690" stroke="${colors.accent}" stroke-width="7" stroke-linecap="round"/>
+
+		<g transform="translate(0 0)">
+			<rect x="0" y="0" width="190" height="300" rx="2" fill="${colors.paperStrong}" stroke="${colors.rule}" stroke-width="2"/>
+			<path d="M24 38h142M24 262h142" stroke="${colors.rule}" stroke-width="2"/>
+			<circle cx="95" cy="52" r="17" fill="${colors.accent}" />
+			<text x="95" y="190" text-anchor="middle" fill="${colors.ink}" font-family="Georgia, Newsreader, serif" font-size="132" font-weight="600" letter-spacing="0">B</text>
+			<text x="95" y="238" text-anchor="middle" fill="${colors.accent}" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="18" font-weight="600" letter-spacing="0">BUILD</text>
+		</g>
+
+		<g transform="translate(250 0)">
+			<rect x="0" y="0" width="190" height="300" rx="2" fill="${colors.paper}" stroke="${colors.rule}" stroke-width="2"/>
+			<path d="M24 38h142M24 262h142" stroke="${colors.rule}" stroke-width="2"/>
+			<circle cx="95" cy="52" r="17" fill="${colors.accentSoft}" stroke="${colors.accent}" stroke-width="3" />
+			<text x="95" y="190" text-anchor="middle" fill="${colors.ink}" font-family="Georgia, Newsreader, serif" font-size="132" font-weight="600" letter-spacing="0">T</text>
+			<text x="95" y="238" text-anchor="middle" fill="${colors.accent}" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="18" font-weight="600" letter-spacing="0">THINK</text>
+		</g>
+
+		<g transform="translate(500 0)">
+			<rect x="0" y="0" width="190" height="300" rx="2" fill="${colors.paperStrong}" stroke="${colors.rule}" stroke-width="2"/>
+			<path d="M24 38h142M24 262h142" stroke="${colors.rule}" stroke-width="2"/>
+			<circle cx="95" cy="52" r="17" fill="${colors.accent}" />
+			<text x="95" y="190" text-anchor="middle" fill="${colors.ink}" font-family="Georgia, Newsreader, serif" font-size="132" font-weight="600" letter-spacing="0">K</text>
+			<text x="95" y="238" text-anchor="middle" fill="${colors.accent}" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="18" font-weight="600" letter-spacing="0">KIN</text>
+		</g>
 	</g>
 
-	<g transform="translate(742 368)">
-		<rect x="0" y="0" width="314" height="128" fill="${colors.paperStrong}" stroke="${colors.rule}" stroke-width="2"/>
-		<text x="26" y="40" fill="${colors.accent}" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="16" font-weight="600" letter-spacing="0">
-			FIELD INDEX
-		</text>
-		<path d="M26 62h262" stroke="${colors.rule}" stroke-width="2"/>
-		<text x="26" y="96" fill="${colors.ink}" font-family="Georgia, Newsreader, serif" font-size="27" letter-spacing="0">Build</text>
-		<text x="122" y="96" fill="${colors.ink}" font-family="Georgia, Newsreader, serif" font-size="27" letter-spacing="0">Think</text>
-		<text x="224" y="96" fill="${colors.ink}" font-family="Georgia, Newsreader, serif" font-size="27" letter-spacing="0">Kin</text>
-	</g>
-
-	<g fill="${colors.accent}" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="16" letter-spacing="0">
-		<text x="205" y="524">systems / notes / experiments / about</text>
-		<text x="947" y="524">letsbelopez.com</text>
-	</g>
+	<text x="600" y="514" text-anchor="middle" fill="${colors.muted}" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="17" letter-spacing="0">letsbelopez.com</text>
 </svg>
 `;
 
 const faviconSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
-	<rect width="128" height="128" rx="28" fill="${colors.ink}" />
-	<path d="M24 20v88" stroke="${colors.accent}" stroke-width="10" stroke-linecap="round"/>
-	<path d="M34 28h70M34 100h70" stroke="${colors.paperStrong}" stroke-width="6" stroke-linecap="round" opacity="0.28"/>
-	<text x="41" y="82" fill="${colors.paper}" font-family="Georgia, Newsreader, serif" font-size="56" font-weight="700" letter-spacing="0">DL</text>
+	<rect width="128" height="128" rx="26" fill="${colors.paper}" />
+	<path d="M31 26v76" stroke="${colors.accent}" stroke-width="10" stroke-linecap="round"/>
+	<text x="51" y="86" fill="${colors.ink}" font-family="Georgia, Newsreader, serif" font-size="76" font-weight="700" letter-spacing="0">L</text>
 </svg>
 `;
 

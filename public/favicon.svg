@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
-	<rect width="128" height="128" rx="28" fill="#1f1b16" />
-	<path d="M24 20v88" stroke="#315b46" stroke-width="10" stroke-linecap="round"/>
-	<path d="M34 28h70M34 100h70" stroke="#eee6d8" stroke-width="6" stroke-linecap="round" opacity="0.28"/>
-	<text x="41" y="82" fill="#f8f4ec" font-family="Georgia, Newsreader, serif" font-size="56" font-weight="700" letter-spacing="0">DL</text>
+	<rect width="128" height="128" rx="26" fill="#f8f4ec" />
+	<path d="M31 26v76" stroke="#315b46" stroke-width="10" stroke-linecap="round"/>
+	<text x="51" y="86" fill="#1f1b16" font-family="Georgia, Newsreader, serif" font-size="76" font-weight="700" letter-spacing="0">L</text>
 </svg>
