@@ -3,7 +3,10 @@ import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+
+const title = 'Notes - David Lopez';
+const description =
+	'Notes, prototypes, explanations, reading notes, and working thoughts from David Lopez.';
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -13,7 +16,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={title} description={description} />
 	</head>
 	<body>
 		<Header />
@@ -22,8 +25,8 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
 				<div class="space-y-4">
 					<h1 class="text-4xl font-medium leading-tight md:text-6xl">Notes, projects, and field sketches.</h1>
 					<p class="max-w-2xl text-lg text-[color:var(--muted)]">
-						Small useful pieces from Build, Think, and Kin. Some are finished essays. Some are placeholders
-						that make an idea easier to find, return to, and eventually build.
+						Small useful pieces from Build, Think, and Kin: prototypes, explanations, reading notes, and
+						working thoughts from things I am building or trying to understand.
 					</p>
 				</div>
 				<ul class="space-y-8">

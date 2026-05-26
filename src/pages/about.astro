@@ -1,39 +1,111 @@
 ---
-import AboutHeroImage from '../assets/avatar.jpeg';
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+
+const title = 'About David Lopez';
+const description =
+	'David Lopez is a software engineer working across production reliability, developer tools, ecommerce systems, and small interactive experiments.';
+
+const strengths = [
+	{
+		title: 'Production systems',
+		description:
+			'I build and operate customer-facing systems where reliability, clear failure modes, and careful releases matter after launch.',
+	},
+	{
+		title: 'Developer tools',
+		description:
+			'I have worked on tools that help engineers and product builders move faster, including AWS Amplify features across CLI, console, services, and code generation.',
+	},
+	{
+		title: 'Ambiguous builds',
+		description:
+			'I like problems with messy edges: legacy constraints, third-party APIs, hardware-adjacent prototypes, operational gaps, and teams still finding the right shape.',
+	},
+];
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('February 11 2026')}
-	heroImage={AboutHeroImage}
->
-	<p>
-		I’m a software engineer focused on infrastructure reliability, operational maturity, and failure-resistant system design.
-	</p>
-	<p>
-		I care about what happens after launch when systems are under real load and mistakes become expensive.
-	</p>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header />
+		<main class="mx-auto w-full max-w-5xl px-4 pb-20 pt-12 md:pt-16">
+			<section class="grid gap-10 border-b border-[color:var(--rule)] pb-12 md:grid-cols-[1fr_12rem] md:items-start">
+				<div class="max-w-3xl space-y-6">
+					<p class="font-mono text-xs uppercase text-[color:var(--accent)]">About</p>
+					<h1 class="text-4xl font-medium leading-tight md:text-6xl">
+						I build software for real-world edges.
+					</h1>
+					<p class="max-w-2xl text-lg text-[color:var(--muted)] md:text-xl">
+						I’m David Lopez, a Southern California software engineer working across ecommerce systems,
+						developer tools, production reliability, and small interactive experiments.
+					</p>
+				</div>
 
-	<p>I work on problems like:</p>
-	<ul>
-		<li>Designing high-availability architectures</li>
-		<li>Reducing deployment risk and blast radius</li>
-		<li>Building incident response systems that actually work</li>
-		<li>Monitoring and alerting that detects meaningful failure</li>
-		<li>Operational philosophy, not just tooling</li>
-	</ul>
+				<aside class="space-y-4 text-sm text-[color:var(--muted)]">
+					<p class="font-mono text-xs uppercase text-[color:var(--ink)]">Find me</p>
+					<SocialLinks linkClass="text-[color:var(--muted)] transition hover:text-[color:var(--accent)]" />
+				</aside>
+			</section>
 
-	<p>
-		Most software systems don’t fail because of a single bug. They fail because operational discipline doesn’t scale with growth. I focus on helping teams close that gap before it becomes visible to customers.
-	</p>
+			<section class="grid gap-8 border-b border-[color:var(--rule)] py-12 md:grid-cols-[1fr_2fr]">
+				<div class="space-y-2">
+					<p class="font-mono text-xs uppercase text-[color:var(--muted)]">Work</p>
+					<h2 class="text-3xl font-medium leading-tight">The through-line.</h2>
+				</div>
 
-	<p>
-		If you're building something ambitious and want a second set of experienced eyes on your operational reliability, I occasionally advise teams on improving their infrastructure and processes.
-	</p>
+				<div class="max-w-3xl space-y-5 text-base leading-8 text-[color:var(--muted)]">
+					<p>
+						My recent work has been at Amazon, AWS, and Ring. I’ve built customer-facing ecommerce
+						infrastructure, delivery-estimate integrations, refund and cancellation workflows, operational
+						dashboards, and reliability fixes for production systems with real users and real failure modes.
+					</p>
+					<p>
+						Before Ring, I worked on AWS Amplify, including developer-facing cloud tooling, authentication
+						features, console and CLI workflows, service integrations, launch readiness, and code-generation
+						systems that turned designs and data models into usable application code.
+					</p>
+					<p>
+						Before Amazon, I worked in consulting across web, mobile, robotics, and product teams. That mix
+						taught me to ramp quickly, communicate clearly, and keep moving when the problem is part software,
+						part system design, part customer reality, and part “we have to demo this soon.”
+					</p>
+				</div>
+			</section>
 
-	<p>
-		If you want to discuss infrastructure reliability or operational systems, feel free to get in touch.
-	</p>
-</Layout>
+			<section class="grid gap-6 border-b border-[color:var(--rule)] py-12 md:grid-cols-3">
+				{strengths.map((strength) => (
+					<article class="space-y-3">
+						<p class="font-mono text-xs uppercase text-[color:var(--accent)]">{strength.title}</p>
+						<p class="text-sm leading-7 text-[color:var(--muted)]">{strength.description}</p>
+					</article>
+				))}
+			</section>
+
+			<section class="grid gap-8 py-12 md:grid-cols-[1fr_2fr]">
+				<div class="space-y-2">
+					<p class="font-mono text-xs uppercase text-[color:var(--muted)]">This site</p>
+					<h2 class="text-3xl font-medium leading-tight">A small public workshop.</h2>
+				</div>
+
+				<div class="max-w-3xl space-y-5 text-base leading-8 text-[color:var(--muted)]">
+					<p>
+						This site is intentionally lightweight. It is a place for notes, prototypes, and explanations that
+						sit between engineering, AI-assisted building, family life, books, and practical philosophy.
+					</p>
+					<p>
+						The first artifact here is <a class="text-link" href="/daylight/">Daylight Toy</a>, a small
+						interactive globe I built to explain day and night to my son before he can read. That is the kind
+						of thing I want this site to hold: modest, useful, personal, and made for an actual human.
+					</p>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

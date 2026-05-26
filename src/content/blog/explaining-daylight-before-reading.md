@@ -1,6 +1,6 @@
 ---
 title: 'Explaining Daylight Before Reading'
-description: 'A placeholder for a web toy I want to build for my son: a small, visual way to understand why one side of Earth is bright and the other is dark.'
+description: 'A small visual note about building a web toy for my son: one motion, one idea, and a way to understand why one side of Earth is bright while the other is dark.'
 pubDate: 'May 14 2026'
 shelf: 'Kin'
 format: 'Field note'
